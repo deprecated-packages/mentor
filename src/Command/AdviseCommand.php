@@ -46,6 +46,7 @@ final class AdviseCommand extends AbstractCommand
         $fix = (bool) $input->getOption(Option::FIX);
 
         $advice = $this->advicePicker->pick();
+
         if ($advice === null) {
             $this->symfonyStyle->success('Nothing to add. Your project is perfect.');
             return ShellCode::SUCCESS;

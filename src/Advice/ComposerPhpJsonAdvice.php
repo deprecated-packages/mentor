@@ -20,10 +20,16 @@ final class ComposerPhpJsonAdvice implements AdviceInterface
      */
     private $composerJsonFilePath;
 
-    public function __construct(ComposerJsonFactory $composerJsonFactory)
+    /**
+     * @var SmartFileSystem
+     */
+    private $smartFileSystem;
+
+    public function __construct(ComposerJsonFactory $composerJsonFactory, SmartFileSystem $smartFileSystem)
     {
         $this->composerJsonFilePath = getcwd() . '/composer.json';
         $this->composerJsonFactory = $composerJsonFactory;
+        $this->smartFileSystem = $smartFileSystem;
     }
 
     public function getName(): string
@@ -33,9 +39,12 @@ final class ComposerPhpJsonAdvice implements AdviceInterface
 
     public function isRelevant(): bool
     {
-        dump($this->composerJsonFilePath);
-        dump('...');
-        die;
+        if (! file_exists($this->composerJsonFilePath)) {
+            return false;
+        }
+
+        $composerJson = $this->composerJsonFactory->createFromFilePath($this->composerJsonFilePath);
+        return $composerJson->getRequirePhpVersion() === null;
     }
 
     public function getWhy(): string
@@ -45,9 +54,10 @@ final class ComposerPhpJsonAdvice implements AdviceInterface
 
     public function getJobDone(): void
     {
-        // update composer.json
-        dump(__DIR__);
-        dump('...');
+        $composerJson = $this->composerJsonFactory->createFromFilePath($this->composerJsonFilePath);
+
+        // @todo resolve
+        dump($composerJson->getRequirePhpVersion());
         die;
     }
 }

@@ -37,6 +37,7 @@ final class AdvicePicker
             return null;
         }
 
-        return array_rand($relevantAdvices);
+        $randomKey = array_rand($relevantAdvices);
+        return $relevantAdvices[$randomKey] ?? null;
     }
 }
