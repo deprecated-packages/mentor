@@ -25,6 +25,7 @@ class ComposerStaticInit0627f713031099cd94ddb51706637d79
             'Symplify\\SmartFileSystem\\' => 25,
             'Symplify\\PackageBuilder\\' => 24,
             'Symplify\\EasyTesting\\' => 21,
+            'Symplify\\ConsolePackageBuilder\\' => 31,
             'Symplify\\ComposerJsonManipulator\\' => 33,
             'Symplify\\AutowireArrayParameter\\' => 32,
             'Symfony\\Polyfill\\Php80\\' => 23,
@@ -77,6 +78,10 @@ class ComposerStaticInit0627f713031099cd94ddb51706637d79
         'Symplify\\EasyTesting\\' => 
         array (
             0 => __DIR__ . '/..' . '/symplify/easy-testing/src',
+        ),
+        'Symplify\\ConsolePackageBuilder\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symplify/console-package-builder/src',
         ),
         'Symplify\\ComposerJsonManipulator\\' => 
         array (

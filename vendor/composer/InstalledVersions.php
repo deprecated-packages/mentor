@@ -14,24 +14,24 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => 'f655000b1aa22f983688f6669c190c4eb5e9886f',
     'name' => '__root__',
   ),
   'versions' => 
   array (
     '__root__' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => 'f655000b1aa22f983688f6669c190c4eb5e9886f',
     ),
     'nette/finder' => 
     array (
@@ -337,6 +337,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'db8ed42ee51998f1124f87aab2a30d12b5dd359d',
+    ),
+    'symplify/console-package-builder' => 
+    array (
+      'pretty_version' => '9.0.11',
+      'version' => '9.0.11.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '159e43067fe1b3c48e2c38f1eb166d42e8d4ed8b',
     ),
     'symplify/easy-testing' => 
     array (

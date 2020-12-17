@@ -10,6 +10,7 @@ return array(
     'Symplify\\SmartFileSystem\\' => array($vendorDir . '/symplify/smart-file-system/src'),
     'Symplify\\PackageBuilder\\' => array($vendorDir . '/symplify/package-builder/src'),
     'Symplify\\EasyTesting\\' => array($vendorDir . '/symplify/easy-testing/src'),
+    'Symplify\\ConsolePackageBuilder\\' => array($vendorDir . '/symplify/console-package-builder/src'),
     'Symplify\\ComposerJsonManipulator\\' => array($vendorDir . '/symplify/composer-json-manipulator/src'),
     'Symplify\\AutowireArrayParameter\\' => array($vendorDir . '/symplify/autowire-array-parameter/src'),
     'Symfony\\Polyfill\\Php80\\' => array($vendorDir . '/symfony/polyfill-php80'),

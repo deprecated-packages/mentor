@@ -2,6 +2,7 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
+use Mentor\HttpKernel\MentorKernel;
 use Symplify\SymplifyKernel\HttpKernel\AbstractSymplifyKernel;
 use Symplify\SymplifyKernel\ValueObject\KernelBootAndApplicationRun;
 
@@ -23,5 +24,5 @@ foreach ($possibleAutoloadPaths as $possibleAutoloadPath) {
 }
 
 
-$kernelBootAndApplicationRun = new KernelBootAndApplicationRun(AbstractSymplifyKernel::class);
+$kernelBootAndApplicationRun = new KernelBootAndApplicationRun(MentorKernel::class);
 $kernelBootAndApplicationRun->run();
