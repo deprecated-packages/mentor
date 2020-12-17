@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Mentor\Command;
 
 use Mentor\Contract\AdviceInterface;
+use Mentor\ValueObject\Option;
 use Nette\Utils\Strings;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -37,10 +38,12 @@ final class AdviseCommand extends AbstractCommand
     protected function configure()
     {
         $this->setDescription('Aks for 1 piece of advice for you project');
+        parent::configure();
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
+        $fix = (bool) $input->getOption(Option::FIX);
         foreach ($this->advices as $advice) {
             if (! $advice->isRelevant()) {
                 continue;
@@ -51,10 +54,11 @@ final class AdviseCommand extends AbstractCommand
             $this->symfonyStyle->writeln('<fg=green>----</>' . PHP_EOL);
             $this->symfonyStyle->writeln($advice->getWhy() . PHP_EOL);
 
-            // @todo...
-            die;
+            if ($fix === true) {
+                $advice->getJobDone();
+                $this->symfonyStyle->success('Fix it');
+            }
         }
-
 
         return ShellCode::SUCCESS;
     }
