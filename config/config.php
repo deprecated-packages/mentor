@@ -12,5 +12,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         ->autoconfigure()
         ->public();
 
-    $services->load('Mentor\\', __DIR__ . '/../src');
+    $services->load('Mentor\\', __DIR__ . '/../src')
+        ->exclude([__DIR__ . '/../src/HttpKernel', __DIR__ . '/../src/ValueObject']);
 };
