@@ -32,7 +32,7 @@ final class GitIgnoreAdvice implements AdviceInterface
 
     public function getName(): string
     {
-        return 'Vendor in .gitignore';
+        return '/vendor in .gitignore';
     }
 
     public function isRelevant(): bool
@@ -42,11 +42,13 @@ final class GitIgnoreAdvice implements AdviceInterface
 
     public function getWhy(): string
     {
+        // @todo find some Stackoverflow link
         return 'The ".gitignore" config file helps you keep local files really local, e.g. "/vendor" should be only local';
     }
 
     public function getJobDone(): void
     {
+        // @todo also remove /vendor
         $this->smartFileSystem->copy(self::GITIGNORE_TEMPLATE_FILE_PATH, $this->filePath);
     }
 }
