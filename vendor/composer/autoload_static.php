@@ -55,6 +55,7 @@ class ComposerStaticInit0627f713031099cd94ddb51706637d79
             'Psr\\Log\\' => 8,
             'Psr\\EventDispatcher\\' => 20,
             'Psr\\Container\\' => 14,
+            'PhpParser\\' => 10,
         ),
         'M' => 
         array (
@@ -186,6 +187,10 @@ class ComposerStaticInit0627f713031099cd94ddb51706637d79
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
+        'PhpParser\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
         ),
         'Mentor\\' => 
         array (

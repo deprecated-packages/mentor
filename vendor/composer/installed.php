@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'f655000b1aa22f983688f6669c190c4eb5e9886f',
+    'reference' => '1f824ccecd55df1e727f684091fb4db46fdd4a77',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'f655000b1aa22f983688f6669c190c4eb5e9886f',
+      'reference' => '1f824ccecd55df1e727f684091fb4db46fdd4a77',
     ),
     'nette/finder' => 
     array (
@@ -46,6 +46,15 @@
       array (
       ),
       'reference' => 'd0427c1811462dbb6c503143eabe5478b26685f7',
+    ),
+    'nikic/php-parser' => 
+    array (
+      'pretty_version' => 'v4.10.3',
+      'version' => '4.10.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'dbe56d23de8fcb157bbc0cfb3ad7c7de0cfb0984',
     ),
     'psr/container' => 
     array (

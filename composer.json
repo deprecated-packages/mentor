@@ -4,7 +4,8 @@
         "symfony/console": "^5.2",
         "symfony/http-kernel": "^5.2",
         "symfony/dependency-injection": "^5.2",
-        "symplify/console-package-builder": "^9.0"
+        "symplify/console-package-builder": "^9.0",
+        "nikic/php-parser": "^4.10"
     },
     "autoload": {
         "psr-4": {
