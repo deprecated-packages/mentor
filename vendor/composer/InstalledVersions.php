@@ -19,7 +19,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '1f824ccecd55df1e727f684091fb4db46fdd4a77',
+    'reference' => '98720a510344ab8d3f3a56f7f55d94461146b1ff',
     'name' => '__root__',
   ),
   'versions' => 
@@ -31,7 +31,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '1f824ccecd55df1e727f684091fb4db46fdd4a77',
+      'reference' => '98720a510344ab8d3f3a56f7f55d94461146b1ff',
     ),
     'nette/finder' => 
     array (
@@ -285,6 +285,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'e70aa8b064c5b72d3df2abd5ab1e90464ad009de',
+    ),
+    'symfony/process' => 
+    array (
+      'pretty_version' => 'v5.2.0',
+      'version' => '5.2.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '240e74140d4d956265048f3025c0aecbbc302d54',
     ),
     'symfony/service-contracts' => 
     array (

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Mentor\Advice;
 
 use Mentor\Contract\AdviceInterface;
+use PhpParser\ParserFactory;
 use Symplify\ComposerJsonManipulator\ComposerJsonFactory;
 use Symplify\SmartFileSystem\SmartFileSystem;
 
@@ -64,8 +65,8 @@ final class ComposerPhpJsonAdvice implements AdviceInterface
         // @detect from minimum composer packages version?
 
         // @todo via config
-        $phpParserFactory = new PhpParserFactory();
-        $parser = $phpParserFactory->create();
+        $parserFactory = new ParserFactory();
+        $parser = $parserFactory->create(ParserFactory::PREFER_PHP7);
 
         dump($composerJson->getRequirePhpVersion());
         die;

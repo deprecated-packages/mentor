@@ -37,7 +37,7 @@ final class AdvicePicker
             return null;
         }
 
-        $randomKey = array_rand($relevantAdvices);
-        return $relevantAdvices[$randomKey] ?? null;
+        // resolve by priority probably
+        return array_pop($relevantAdvices);
     }
 }
