@@ -8,6 +8,8 @@ use Mentor\Contract\AdviceInterface;
 use Symplify\ComposerJsonManipulator\ComposerJsonFactory;
 use Symplify\SmartFileSystem\SmartFileSystem;
 
+// @todo apply
+
 final class ComposerPhpJsonAdvice implements AdviceInterface
 {
     /**
@@ -34,7 +36,7 @@ final class ComposerPhpJsonAdvice implements AdviceInterface
 
     public function getName(): string
     {
-        return 'Make PHP version';
+        return 'Make PHP version explicit in composer.json';
     }
 
     public function isRelevant(): bool
@@ -56,7 +58,15 @@ final class ComposerPhpJsonAdvice implements AdviceInterface
     {
         $composerJson = $this->composerJsonFactory->createFromFilePath($this->composerJsonFilePath);
 
-        // @todo resolve
+        // @todo resolve - what would human do
+        // @guess from platform?
+        // @guess from PHP parser and try features and exceptions?
+        // @detect from minimum composer packages version?
+
+        // @todo via config
+        $phpParserFactory = new PhpParserFactory();
+        $parser = $phpParserFactory->create();
+
         dump($composerJson->getRequirePhpVersion());
         die;
     }
