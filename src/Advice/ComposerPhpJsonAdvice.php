@@ -5,8 +5,11 @@ declare(strict_types=1);
 namespace Mentor\Advice;
 
 use Mentor\Contract\AdviceInterface;
+use PhpParser\NodeTraverser;
+use PhpParser\NodeVisitorAbstract;
 use PhpParser\ParserFactory;
 use Symplify\ComposerJsonManipulator\ComposerJsonFactory;
+use Symplify\SmartFileSystem\Finder\SmartFinder;
 use Symplify\SmartFileSystem\SmartFileSystem;
 
 // @todo apply
@@ -27,12 +30,21 @@ final class ComposerPhpJsonAdvice implements AdviceInterface
      * @var SmartFileSystem
      */
     private $smartFileSystem;
+    /**
+     * @var SmartFinder
+     */
+    private $smartFinder;
 
-    public function __construct(ComposerJsonFactory $composerJsonFactory, SmartFileSystem $smartFileSystem)
+    public function __construct(
+        ComposerJsonFactory $composerJsonFactory,
+        SmartFileSystem $smartFileSystem,
+        SmartFinder $smartFinder
+    )
     {
         $this->composerJsonFilePath = getcwd() . '/composer.json';
         $this->composerJsonFactory = $composerJsonFactory;
         $this->smartFileSystem = $smartFileSystem;
+        $this->smartFinder = $smartFinder;
     }
 
     public function getName(): string
@@ -67,6 +79,22 @@ final class ComposerPhpJsonAdvice implements AdviceInterface
         // @todo via config
         $parserFactory = new ParserFactory();
         $parser = $parserFactory->create(ParserFactory::PREFER_PHP7);
+
+        $fileInfos = $this->smartFinder->find([__DIR__ . '/../../src'], '*.php');
+
+        $nodeTraverser = new NodeTraverser();
+        $nodeTraverser->addVisitor(class() extends NodeVisitorAbstract() {
+
+       });
+        foreach ($fileInfos as $fileInfo) {
+            $nodes = $parser->parse($fileInfo->getContents());
+            die;
+        }
+
+        // traverse with node traverserss and get the right version
+
+
+        // parse code untill the PHP version is done right
 
         dump($composerJson->getRequirePhpVersion());
         die;
